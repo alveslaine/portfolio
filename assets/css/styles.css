@@ -277,6 +277,7 @@ header a:hover{
      gap: var(--spacing-2xl);
      font-size: var(--text-base);
      margin-bottom: 20px;
+     text-align: justify;
 }
 
 .buttons-container{
@@ -601,4 +602,191 @@ footer {
     font-weight: 600;
     text-align: center;
     color: var(--white);
+}
+
+/* Responsividade Tablet*/
+@media screen and (max-width: 1024px){
+    
+    .section-container{
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .section-container h1{
+        font-size: var(--text-3xl);
+    }
+
+    .section-container h2{
+        font-size: var(--text-2xl);
+    }
+
+    .section-container p{
+        font-size: var(--text-base);
+    }
+
+    .section-container span{
+        font-size: var(--text-lg);
+    }
+
+    #titulo{
+        font-size: var(--text-xl);
+    }
+
+    .section-container{
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .sucess h1{
+        font-size: var(--text-3xl);
+    }
+
+    @media screen and (max-width: 768px){
+        
+        .menu-list{
+            display: none;
+        }
+    }
+
+    .hero-container{
+        flex-direction: column-reverse;
+        gap: var(--spacing-lg);
+        min-height: 60vh;
+        text-align: center;
+    }
+
+    .hero-content,
+    .hero-image{
+        width: 90%;
+    }
+
+    .hero-image img{
+        object-fit: cover ;
+    }
+
+    .buttons-container{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-container .botao,
+    .hero-container .botao-outline{
+        padding: 0.75rem 1.5rem;
+        font-size: var(--text-base);
+        white-space: nowrap;
+    }
+
+    /* Responsividade Tablet Seção About */
+    .about-container{
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        margin: var(--spacing-lg);
+        padding: var(--spacing-lg);
+    }
+    .about-image{
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-image img{
+        max-width: 16rem;
+        width: 100%;
+    }
+
+    .about-content{
+        width: 100%;
+    }
+
+    .about-buttons-data{
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: stretch;
+    }
+
+    .about-buttons-data .botao{
+        margin-right: 0;
+    }
+
+    .data-container{
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Responsividade Tablet Seção Projects */
+
+    .projects-container{
+        margin: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .projects-swiper{
+        margin: 0;
+        padding: var(--spacing-sm) var(--spacing-lg) 2.5rem;
+    }
+
+    .project-card{
+        width: 100%;
+        height: 30rem;
+        min-height: 30rem;
+        max-height: 30rem;
+        max-width: 100%;
+    }
+
+    .project-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .project-content p{
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .project-tags{
+        min-height: 2.5rem;
+        align-items: flex-start;
+    }
+
+    .swiper-wrapper{
+        align-items: stretch;
+    }
+
+    .swiper-slide{
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: auto;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev{
+        display: none;
+    }
+
+    /* Responsividade Tablet Seção Contacts */
+
+    .contact-container{
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Responsividade Tablet Seção Sucess */
+
+    .sucess{
+        padding: var(--spacing-xl) var(--spacing-md);
+        min-height: calc(100vh - 10rem);
+    }
+    .sucess img{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+/* Responsividade Celular */
+
+@media screen and (max-width: 480px){
+    
 }
