@@ -106,7 +106,7 @@ main{
     text-align: center;
     cursor: pointer;
     transition: var(--transition-default);
-    margin: var(--spacing-lg) auto;
+    margin: var(--spacing-lg) 0;
 }
 
 .botao{
@@ -142,7 +142,7 @@ main{
     padding: 0.25rem var(--spacing-sm);
     border-width: 0.125rem;
     border-radius: 0.25rem;
-    font-size: var(--text-sm);
+    margin: 0;
 }
 
 /* Seção Header - Cabeçalho e Menu */
@@ -211,7 +211,9 @@ header a:hover{
 }
 
 .hero-content h1{
-    font-weight: 500;
+     color: var(--purple-500);
+    font-weight: 700;
+    font-size: var(--text-2xl);
 }
 
 /* Configura todos os Parágrafos */
@@ -265,6 +267,7 @@ header a:hover{
     display: flex;
     flex: 1;
     border-radius: var(--radius-full);
+    border: 0.25rem solid var(--purple-500);
     width: 100%;
 }
 
@@ -296,7 +299,7 @@ header a:hover{
 
 .data-container{
     display: flex;
-    flex: 1;
+    padding-top: 4%;
     justify-content: flex-end;
     gap: var(--spacing-md);
 }
@@ -322,6 +325,7 @@ header a:hover{
     scroll-margin-top: 3rem;
     margin: var(--spacing-2xl) auto;
     text-align: center;
+    max-width: 80rem;
 }
 
 .projects-swiper{
@@ -348,21 +352,49 @@ header a:hover{
 }
 
 .project-image{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 10rem;
+    height: 14rem;
+    overflow: hidden;
     background: linear-gradient(135deg, var(--white) 0%, var(--purple-500) 100%);
 }
-.project-image img{
+
+.project-image img.project-icon-only{
     width: 75%;
     height: 75%;
     max-width: 7rem;
     max-height: 7rem;
     object-fit: contain;
-    transition: transform 0.3 ease;
-} 
+    transition: transform 0.3s ease;
+}
+
+.project-image img.project-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img.project-cover{
+    transform: scale(1.05);
+}
+
+.project-image img.project-badge{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    object-fit: contain;
+}
 
 .project-content{
     display: flex;
@@ -372,10 +404,17 @@ header a:hover{
     text-align: left;
 }
 
+.projects-container h2 {
+     color: var(--purple-500);
+    font-weight: 700;
+    font-size: var(--text-2xl);
+}
+
 .project-content h3{
     margin-bottom: 0.75rem;
     font-size: var(--text-lg);
     font-weight: 700;
+    color: var();
 }
 
 .project-content p{
@@ -405,7 +444,7 @@ header a:hover{
     justify-content: center;
     align-items: center;
     gap: 0.75rem;
-    margin-top: var(--shadow-sm);
+    margin-top: var(--spacing-md);
 }
 
 /* Configuração do Swiper */
@@ -503,7 +542,9 @@ header a:hover{
 /* Redes Sociais */
 .contact-info h2{
     margin-bottom: var(--shadow-sm);
+    color: var(--purple-500);
     font-weight: 700;
+    font-size: var(--text-2xl);
 }
 
 .contact-info p{
@@ -512,7 +553,7 @@ header a:hover{
 
 .social-container{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: var(--spacing-xl);
 }
 
