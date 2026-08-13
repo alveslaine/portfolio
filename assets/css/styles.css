@@ -349,6 +349,41 @@ header a:hover{
     color: var(--gray-400);
 }
 
+/* Seção Linguagens */
+.linguagens-container{
+    display: flex;
+    margin: var(--spacing-2xl) auto;
+    border: 1px solid rgba(188,120,138,.28);
+    border-radius: var(--radius-lg); 
+    background: var(--white); 
+    box-shadow: var(--shadow-sm);
+    max-width: 70rem;
+    padding: var(--spacing-md);
+    justify-content: center;
+}
+
+.linguagens-container h3{
+    color: var(--bordo-900);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.icon-container img{
+    width: 75%;
+    gap: var(--spacing-md);
+
+}
+
 /* Seção Projects */
 .projects-container{
     scroll-margin-top: 3rem;
