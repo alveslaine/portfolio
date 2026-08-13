@@ -10,32 +10,33 @@
 
 /* Variáveis */
 :root {
-    /* Paleta de Cores - Purple */
-    --purple-50: #f4eaff;
-    --purple-100: #e9dcfa;
-    --purple-200: #cdb3f0;
-    --purple-300: #b186e5;
-    --purple-400: #9460db;
-    --purple-500: #6b36c8;
-    --purple-600: #5b2ca0;
-    --purple-700: #4c2177;
-    --purple-800: #441f88;
-    --purple-900: #2a0e4d;
-    --purple-950: #1a0730;
+    /* Paleta de Cores - Bordo */
+    
+    --bordo-50: #fff9fa;
+    --bordo-100: #f9e8ec;
+    --bordo-200: #edcbd3;
+    --bordo-300: #9b5267;
+    --bordo-400: #9e2e46;
+    --bordo-500: #9e2e46;
+    --bordo-600: #7c1f39f0;
+    --bordo-700: #960826;
+    --bordo-800: #86021f;
+    --bordo-850: #7c1f39;
+    --bordo-900: #571427;
  
     /* Cores Neutras */
-    --gray-200: #e8e8e8;
+    --gray-200: #eee1e1;
     --gray-400: #505861;
     --black: #171717;
-    --white: #FAF7FF;
+    --white: #ffffff;
  
     /* Cores de Estado */
     --error: #e63946;
  
     /* Sombras */
-    --shadow-sm: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 0.25rem 0.75rem rgba(107, 54, 200, 0.3);
-    --shadow-lg: 0 0.5rem 1.5rem rgba(107, 54, 200, 0.2);
+    --shadow-sm: 0 0.25rem 0.5rem rgba(158, 46, 70, 0.295);
+    --shadow-md: 0 0.25rem 0.75rem rgba(163, 6, 40, 0.466);
+    --shadow-lg: 0 0.5rem 1.5rem rgba(172, 37, 66, 0.582);
  
     /* Espaçamentos */
     --spacing-xs: 0.5rem;
@@ -69,10 +70,16 @@ html{
 }
 
 body{
+    overflow-x: hidden;
+    background:radial-gradient(circle at 8% 20%, 
+            rgba(237, 203, 211, .34) 0 1px, transparent 0.15rem),  
+            radial-gradient(circle at 92% 40%, 
+            rgba(158, 46, 70, .12) 0 1px, transparent 0.10rem),
+            var(--bordo-50);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--white);
+    background-size: 3rem 3rem, 5rem 5rem, auto;
     line-height: 1.6;
     color: var(--black);
 }
@@ -100,7 +107,7 @@ main{
     display: inline-block;
     padding: 0.75rem 2rem;
     border: 0.15rem solid transparent;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     font-size: var(--text-base);
     font-weight: 600;
     text-align: center;
@@ -110,27 +117,27 @@ main{
 }
 
 .botao{
-    border-color: var(--purple-700);
-    background-color: var(--purple-500);
+    border-color: var(--bordo-700);
+    background: linear-gradient(135deg, var(--bordo-500), var(--bordo-900)); 
     color: var(--white);
 }
 
 .botao:hover{
-    border-color: var(--purple-800);
-    background-color: var(--purple-700);
+    border-color: var(--bordo-800);
+    background-color: var(--bordo-700);
     box-shadow: var(--shadow-md);
     transform: translateY(-0.25rem);
 }
 
 .botao-outline{
-    border-color: var(--purple-700);
+    border-color: var(--bordo-700);
     background-color: transparent;
-    color: var(--purple-700);
+    color: var(--bordo-700);
 }
 
 .botao-outline:hover{
-    border-color: var(--purple-700);
-    color: var(--purple-700);
+    border-color: var(--bordo-700);
+    color: var(--bordo-700);
     box-shadow: var(--shadow-md);
     transform: translateY(-0.25rem);
 }
@@ -145,26 +152,28 @@ main{
     margin: 0;
 }
 
+
 /* Seção Header - Cabeçalho e Menu */
 header{
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    height: 4rem;
+    height: 4.5rem;
     border-bottom: var(--spacing-xs) solid var(--gray-200);
-    box-shadow: var(--purple-800);
-    background-color: var(--purple-600);
+    box-shadow: var(--bordo-800);
+    background-color: var(--bordo-500);
 }
 
 header a{
     font-weight: 600;
+    
     color: var(--white);
     transition: color 0.3s ease;
 }
 
 header a:hover{
-    color: var(--purple-200);
+    color: var(--bordo-200);
 }
 
 #titulo{
@@ -207,13 +216,37 @@ header a:hover{
 }
 
 .hero-content span{
+    color: var(--bordo-850);
+    font-weight: 500;
     font-size: var(--text-lg);
 }
 
 .hero-content h1{
-     color: var(--purple-500);
+    color: var(--bordo-900);
     font-weight: 700;
     font-size: var(--text-2xl);
+    font-family: Georgia, 'Times New Roman', serif;
+} 
+.about-content h2, 
+.projects-container h2, 
+.contact-info h2{
+    color: var(--bordo-900);
+    font-weight: 700;
+    font-size: var(--text-3xl);
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.hero-content h1::after,
+.about-content h2::after,
+.projects-container h2::after,
+.contact-info h2::after {
+    display: block;
+    width: 4rem;
+    height: .18rem;
+    margin-top: .7rem;
+    border-radius: 99px;
+    content: '';
+    background: linear-gradient(90deg, var(--wine), #e8b7c4, transparent);
 }
 
 /* Configura todos os Parágrafos */
@@ -253,28 +286,24 @@ header a:hover{
 }
 
 /* Seção About */
-
 .about-container{
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: var(--spacing-2xl);
-    background-color: var(--gray-200);
-    border-radius: var(--radius-lg);
+    padding: clamp(2rem, 5vw, 3rem); 
+    border: 1px solid rgba(188,120,138,.28);
+    border-radius: var(--radius-lg); 
+    background: var(--white); 
+    box-shadow: var(--shadow-sm);
 }
 
 .about-image img{
     display: flex;
     flex: 1;
     border-radius: var(--radius-full);
-    border: 0.25rem solid var(--purple-500);
+    border: 0.25rem solid var(--bordo-500);
     width: 100%;
-}
-
-.about-content h2{
-    color: var(--purple-500);
-    font-weight: 700;
-    font-size: var(--text-2xl);
 }
 
 .about-content p{ 
@@ -308,7 +337,7 @@ header a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--purple-500);
+    color: var(--bordo-500);
     font-size: var(--text-lg);
     font-weight: 700;
     text-align: center;
@@ -359,7 +388,7 @@ header a:hover{
     width: 100%;
     height: 14rem;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--white) 0%, var(--purple-500) 100%);
+    background: linear-gradient(135deg, var(--white) 0%, var(--bordo-200) 100%);
 }
 
 .project-image img.project-icon-only{
@@ -404,17 +433,11 @@ header a:hover{
     text-align: left;
 }
 
-.projects-container h2 {
-     color: var(--purple-500);
-    font-weight: 700;
-    font-size: var(--text-2xl);
-}
-
 .project-content h3{
     margin-bottom: 0.75rem;
     font-size: var(--text-lg);
     font-weight: 700;
-    color: var();
+    color: var(--bordo-900);
 }
 
 .project-content p{
@@ -433,10 +456,10 @@ header a:hover{
 .tag{
     padding: 0.375rem 0.75rem;
     border-radius: var(--radius-sm);
-    background-color: var(--purple-100);
+    background-color: var(--bordo-100);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--purple-800);
+    color: var(--bordo-800);
 }
 
 .project-buttons{
@@ -468,12 +491,12 @@ header a:hover{
 .swiper-button-next:after,
 .swiper-button-prev:after {
     font-size: var(--text-lg);
-    color: var(--purple-500);
+    color: var(--bordo-500);
 }
  
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
-    color: var(--purple-800);
+    color: var(--bordo-800);
 }
  
 /* Indicadores de paginação */
@@ -487,7 +510,7 @@ header a:hover{
 .swiper-pagination-bullet-active {
     width: var(--spacing-lg);
     border-radius: var(--radius-sm);
-    background-color: var(--purple-500);
+    background-color: var(--bordo-500);
 }
 /* Configuração do Swiper */
  
@@ -510,12 +533,12 @@ header a:hover{
 .swiper-button-next:after,
 .swiper-button-prev:after {
     font-size: var(--text-lg);
-    color: var(--purple-500);
+    color: var(--bordo-500);
 }
  
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
-    color: var(--purple-800);
+    color: var(--bordo-800);
 }
  
 /* Indicadores de paginação */
@@ -529,7 +552,7 @@ header a:hover{
 .swiper-pagination-bullet-active {
     width: var(--spacing-lg);
     border-radius: var(--radius-sm);
-    background-color: var(--purple-500);
+    background-color: var(--bordo-500);
 }
 
 /* Seção de Contatos */
@@ -537,30 +560,34 @@ header a:hover{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-2xl);
+    margin-bottom: 2rem; 
+    padding: clamp(2rem, 5vw, 4rem); 
+    border-radius: var(--radius-lg); 
+    background: linear-gradient(100deg, var(--bordo-100), var(--white)); 
 }
 
 /* Redes Sociais */
-.contact-info h2{
-    margin-bottom: var(--shadow-sm);
-    color: var(--purple-500);
-    font-weight: 700;
-    font-size: var(--text-2xl);
-}
-
 .contact-info p{
     margin-bottom: var(--spacing-lg);
 }
-
+.social-container span{ 
+    display: flex;
+    color: var(--bordo-900);
+    gap: var(--spacing-2xl);
+    white-space: nowrap;
+}
 .social-container{
     display: flex;
-    justify-content: flex-start;
-    gap: var(--spacing-xl);
+    flex-direction: column;
+    gap: var(--spacing-lg);
 }
 
 .social-icon{
     display: flex;
-    width: 5rem;
-    height: 5rem;
+    align-items: center;
+    gap: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: var(--radius-md);
     transition: var(--transition-default);
 }
@@ -573,13 +600,13 @@ header a:hover{
 
 .social-icon img:hover {
   filter: brightness(0) 
-          saturate(100%) 
-          invert(42%) 
-          sepia(93%) 
-          saturate(1352%) 
-          hue-rotate(243deg) 
-          brightness(79%) 
-          contrast(91%);
+        saturate(100%) 
+        invert(21%) 
+        sepia(41%) 
+        saturate(2830%) 
+        hue-rotate(320deg) 
+        brightness(95%) 
+        contrast(89%);
 }
 
 form{
@@ -597,7 +624,7 @@ form input,
 form textarea{
     width: 100%;
     padding: 0.5rem var(--spacing-sm);
-    border: 0.25rem solid var(--gray-200);
+    border: 0.15rem solid var(--gray-200);
     border-radius: var(--radius-md);
     font-family: inherit;
     font-size: var(--text-base);
@@ -606,7 +633,7 @@ form textarea{
 
 form input:focus, 
 form textarea:focus{
-    border-color:var(--purple-500);
+    border-color:var(--bordo-500);
     outline: none;
 }
 
@@ -638,14 +665,14 @@ main button a{
 }
 
 .sucess h1{
-    color: var(--purple-700);
+    color: var(--bordo-700);
     font-weight: 500;
 }
 
 /* Footer */
 footer {
     padding: 2rem;
-    background: linear-gradient(to right, var(--purple-500), var(--purple-800));
+    background: linear-gradient(to right, var(--bordo-500), var(--bordo-800));
     font-weight: 600;
     text-align: center;
     color: var(--white);
@@ -950,7 +977,7 @@ footer {
     }
 
     .section-container h2{
-        color: var(--purple-700);
+        color: var(--bordo-700);
         font-weight: 700;
     }
 
@@ -1027,3 +1054,60 @@ footer {
         height: 6rem;
     }
 }
+.estrelas {
+    display: flex;
+    gap: var(--spacing-2xl);
+    justify-content:center;
+    margin-top: 0%;
+}
+
+.estrelas span {
+    color: var(--bordo-300);
+    font-size: 0.75rem;
+    text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px #00bfff;
+
+    animation: brilho 1.5s infinite alternate;
+}
+
+/* Faz a estrela brilhar */
+@keyframes brilho {
+    from {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+        text-shadow:
+            0 0 5px white,
+            0 0 15px white,
+            0 0 30px #00bfff,
+            0 0 50px #00bfff;
+    }
+}
+
+.estrelas span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.estrelas span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.estrelas span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.estrelas span:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.estrelas span:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+

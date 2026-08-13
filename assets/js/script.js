@@ -104,6 +104,7 @@ async function getProjectsGithub(){
         // Para projetos sem print ainda, ele cai no ícone da linguagem automaticamente
         const capas = {
             'portfolio': './assets/img/capas/portfolio.png',
+            'blogpessoal_spring': './assets/img/capas/blogPessoal.png',
             // 'nome-do-repo': './assets/img/capas/nome-do-arquivo.png',
         }
 
