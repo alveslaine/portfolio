@@ -1030,6 +1030,31 @@ footer {
 
     /* Responsividade Celular Seção Contacts */
 
+    .social-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: var(--spacing-xs);
+    }
+
+    .social-container span{
+        font-size: var(--text-sm);
+        max-height: 3rem;
+    }
+
+    social-icon{
+        display: flex;
+        align-items: center;
+        border-radius: var(--radius-md);
+        transition: var(--transition-default);
+    }
+    .social-icon img{
+        width: 2rem;
+        height: 2rem;
+        max-height: 3rem;
+    }
+
     .contact-container{
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -1111,5 +1136,3 @@ footer {
 .estrelas span:nth-child(5) {
     animation-delay: 1.2s;
 }
-
-

@@ -77,7 +77,7 @@ async function getAboutGithub(){
 // Função para construção do carrossel com o Swiper
 async function getProjectsGithub(){
     try{
-        const resposta = await fetch('https://api.github.com/users/alveslaine/repos?sort=update&per_page=9')
+        const resposta = await fetch('https://api.github.com/users/alveslaine/repos?sort=update&per_page=6')
 
         const repositorios = await resposta.json()
 
